@@ -8,3 +8,19 @@
   max-width: 1080px;
   margin: 0 auto;
 }
+
+@media screen and (max-width: 1080px) {
+  .container {
+    height: auto;
+    background: var(--background);
+  }
+  .wrapperHeader {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .wrapperHeaderBottom {
+    display: none;
+  }
+}

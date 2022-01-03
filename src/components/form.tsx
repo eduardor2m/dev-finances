@@ -40,11 +40,11 @@ export const Form: FC = () => {
     <form className={styles.formImport} onSubmit={handleAddTransaction}>
       <div className={styles.formLI}>
         <label htmlFor="title">Título</label>
-        <input type="text" id="title" />
+        <input type="text" id="title" className={styles.input} />
       </div>
       <div className={styles.formLI}>
         <label htmlFor="value">Valor</label>
-        <input type="number" id="price" />
+        <input type="number" id="price" className={styles.input} />
       </div>
       <div className={styles.formButtons}>
         <button
@@ -91,6 +91,7 @@ export const Form: FC = () => {
         <select
           name="category"
           id="category"
+          className={styles.select}
           onChange={(e) => e.defaultPrevented}
         >
           <option value="Venda">Venda</option>
@@ -102,6 +103,7 @@ export const Form: FC = () => {
       <input
         type="submit"
         value="Adicionar"
+        className={styles.input}
         style={{
           backgroundColor: '#00bfa5',
           color: '#fff',

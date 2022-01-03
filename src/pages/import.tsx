@@ -5,6 +5,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 import { Form } from '../components/form';
+import { HeaderBottom } from '../components/headerBottom';
 import { HeaderSmall } from '../components/headerSmall';
 import styles from '../styles/pages/Import.module.scss';
 
@@ -16,7 +17,7 @@ const Import: NextPage = () => {
   useEffect(() => {
     if (router.asPath === '/') {
       setRoute(true);
-    } else if (router.asPath === '/list') {
+    } else if (router.asPath === '/import') {
       setRoute(false);
     }
   }, [router]);
@@ -33,10 +34,15 @@ const Import: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <HeaderSmall route={route} />
+        <div className={styles.wrapperHeader}>
+          <HeaderSmall route={route} />
+        </div>
         <div className={styles.import}>
-          <h1>Transação</h1>
+          <h1>Cadastrar</h1>
           <Form />
+        </div>
+        <div className={styles.wrapperHeaderBottom}>
+          <HeaderBottom route={route} />
         </div>
       </main>
     </div>

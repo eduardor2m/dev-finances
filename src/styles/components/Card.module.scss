@@ -59,3 +59,20 @@
     }
   }
 }
+
+@media screen and (max-width: 1080px) {
+  .cards {
+    width: 90%;
+    margin-left: 5%;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 0;
+    align-items: center;
+
+    .card {
+      width: 100%;
+    }
+  }
+}
