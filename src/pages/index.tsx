@@ -1,28 +1,29 @@
-import type { NextPage } from 'next'
-import { useTransaction } from '../hooks/useTransaction'
-import Head from 'next/head'
-import styles from '../styles/pages/Home.module.scss'
-import { Table } from '../components/table'
-import { Card } from '../components/card'
-import { Header } from '../components/header'
-import { useEffect, useState } from 'react'
-import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react';
+
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+
+import { Card } from '../components/card';
+import { Header } from '../components/header';
+import { Table } from '../components/table';
+import { useTransaction } from '../hooks/useTransaction';
+import styles from '../styles/pages/Home.module.scss';
 
 const Home: NextPage = () => {
-
-  const {transaction} = useTransaction();
+  const { transaction } = useTransaction();
   const router = useRouter();
 
-  const [ route, setRoute ] = useState(true)
+  const [route, setRoute] = useState(true);
 
   useEffect(() => {
     if (router.asPath === '/') {
-      setRoute(true)
+      setRoute(true);
     } else if (router.asPath === '/list') {
-      setRoute(false)
+      setRoute(false);
     }
-  }, [router])
-  
+  }, [router]);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -32,14 +33,12 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        
         <Header route={route} />
         <Card />
-        <Table data={ transaction }/>
-        
+        <Table data={transaction} />
       </main>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

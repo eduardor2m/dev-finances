@@ -1,24 +1,25 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import styles from '../styles/pages/Import.module.scss'
-import { HeaderSmall } from '../components/headerSmall'
-import { useEffect, useState } from 'react'
-import { useRouter } from 'next/router'
-import { Form } from '../components/form'
+import { useEffect, useState } from 'react';
+
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+
+import { Form } from '../components/form';
+import { HeaderSmall } from '../components/headerSmall';
+import styles from '../styles/pages/Import.module.scss';
 
 const Import: NextPage = () => {
-
   const router = useRouter();
 
-  const [ route, setRoute ] = useState(true)
+  const [route, setRoute] = useState(true);
 
   useEffect(() => {
     if (router.asPath === '/') {
-      setRoute(true)
+      setRoute(true);
     } else if (router.asPath === '/list') {
-      setRoute(false)
+      setRoute(false);
     }
-  }, [router])
+  }, [router]);
 
   return (
     <div className={styles.container}>
@@ -29,16 +30,14 @@ const Import: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <HeaderSmall route={route}/>
+        <HeaderSmall route={route} />
         <div className={styles.import}>
           <h1>Transação</h1>
           <Form />
-
         </div>
-        
       </main>
     </div>
-  )
-}
+  );
+};
 
-export default Import
+export default Import;

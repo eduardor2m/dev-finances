@@ -5,20 +5,19 @@ interface TransactionProviderProps {
 }
 
 type Transaction = {
-    id: string
-    title: string
-    amount: number
-    date: string
-    category: string
-    type: string
-}
+  id: string;
+  title: string;
+  amount: number;
+  date: string;
+  category: string;
+  type: string;
+};
 
 type Status = {
-  income: number
-  outcome: number
-  balance: number
-}
-
+  income: number;
+  outcome: number;
+  balance: number;
+};
 
 interface TransactionContextData {
   transaction: Transaction[];
@@ -27,27 +26,28 @@ interface TransactionContextData {
   statusTransaction: () => Status;
 }
 
-const TransactionContext = createContext<TransactionContextData>({} as TransactionContextData);
+const TransactionContext = createContext<TransactionContextData>(
+  {} as TransactionContextData
+);
 
-export function TransactionProvider({ children }: TransactionProviderProps): JSX.Element {
-
+export function TransactionProvider({
+  children,
+}: TransactionProviderProps): JSX.Element {
   const storageKey = '@DevFinances:transactions';
 
   const [transaction, setTransaction] = useState<Transaction[]>(() => {
-    if (typeof window !== "undefined") {
+    if (typeof window !== 'undefined') {
+      const storagedTransaction = localStorage.getItem(storageKey);
 
-    const storagedTransaction = localStorage.getItem(storageKey);
-
-    if (storagedTransaction) {
-      return JSON.parse(storagedTransaction);
+      if (storagedTransaction) {
+        return JSON.parse(storagedTransaction);
+      }
     }
-  }
 
     return [];
   });
 
   const addTransaction = async (newTransaction: Transaction) => {
-
     const newTransactions = [...transaction, newTransaction];
 
     try {
@@ -60,7 +60,9 @@ export function TransactionProvider({ children }: TransactionProviderProps): JSX
 
   const removeTransaction = (transactionId: string) => {
     try {
-      const newTransaction = transaction.filter(transaction => transaction.id !== transactionId);
+      const newTransaction = transaction.filter(
+        (transaction) => transaction.id !== transactionId
+      );
       setTransaction(newTransaction);
       localStorage.setItem(storageKey, JSON.stringify(newTransaction));
     } catch {
@@ -69,29 +71,33 @@ export function TransactionProvider({ children }: TransactionProviderProps): JSX
   };
 
   const statusTransaction = () => {
-      let outcome = 0;
-      let income = 0;
-      transaction.map(transaction => {
-        if (transaction.type === 'outcome') {
-          outcome += transaction.amount;
-        } else {
-          income += transaction.amount;
-        }
-      });
+    let outcome = 0;
+    let income = 0;
+    transaction.map((transaction) => {
+      if (transaction.type === 'outcome') {
+        outcome += transaction.amount;
+      } else {
+        income += transaction.amount;
+      }
+    });
 
-      const balance = income - outcome;
+    const balance = income - outcome;
 
-      return {
-        income,
-        outcome,
-        balance
-      };
-
-  }
+    return {
+      income,
+      outcome,
+      balance,
+    };
+  };
 
   return (
     <TransactionContext.Provider
-      value={{ transaction, addTransaction, removeTransaction, statusTransaction }}
+      value={{
+        transaction,
+        addTransaction,
+        removeTransaction,
+        statusTransaction,
+      }}
     >
       {children}
     </TransactionContext.Provider>
