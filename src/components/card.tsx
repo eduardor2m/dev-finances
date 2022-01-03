@@ -17,23 +17,12 @@ export const Card: FC = () => {
   const { statusTransaction } = useTransaction();
 
   useEffect(() => {
-    const income = statusTransaction().income.toLocaleString('pt-BR', {
-      style: 'currency',
-      currency: 'BRL',
-    });
-    const outcome = statusTransaction().outcome.toLocaleString('pt-BR', {
-      style: 'currency',
-      currency: 'BRL',
-    });
-    const balance = statusTransaction().balance.toLocaleString('pt-BR', {
-      style: 'currency',
-      currency: 'BRL',
-    });
-
+    const { incomeFormatted, outcomeFormatted, balanceFormatted } =
+      statusTransaction();
     setStatus({
-      income,
-      outcome,
-      balance,
+      income: incomeFormatted,
+      outcome: outcomeFormatted,
+      balance: balanceFormatted,
     });
   }, [statusTransaction]);
 

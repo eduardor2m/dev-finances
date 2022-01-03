@@ -9,7 +9,7 @@ type PropsTransaction = {
   data: {
     id: string;
     title: string;
-    amount: number;
+    price: number;
     date: string;
     category: string;
     type: string;
@@ -50,7 +50,7 @@ export const Table: FC<PropsTransaction> = ({ data }) => {
               }}
             >
               {transaction.type === 'income' ? '' : '-'}{' '}
-              {transaction.amount.toLocaleString('pt-BR', {
+              {transaction.price.toLocaleString('pt-BR', {
                 style: 'currency',
                 currency: 'BRL',
               })}

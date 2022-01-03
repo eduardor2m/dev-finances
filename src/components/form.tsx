@@ -15,8 +15,8 @@ export const Form: FC = () => {
     const title = (
       e.currentTarget.elements.namedItem('title') as HTMLInputElement
     ).value;
-    const amount = (
-      e.currentTarget.elements.namedItem('amount') as HTMLInputElement
+    const price = (
+      e.currentTarget.elements.namedItem('price') as HTMLInputElement
     ).value;
     const category = (
       e.currentTarget.elements.namedItem('category') as HTMLInputElement
@@ -27,7 +27,7 @@ export const Form: FC = () => {
     const transaction = {
       id: String(Math.random()),
       title,
-      amount: Number(amount),
+      price: Number(price),
       category,
       type: income ? 'income' : 'outcome',
       date,
@@ -44,7 +44,7 @@ export const Form: FC = () => {
       </div>
       <div className={styles.formLI}>
         <label htmlFor="value">Valor</label>
-        <input type="number" id="amount" />
+        <input type="number" id="price" />
       </div>
       <div className={styles.formButtons}>
         <button

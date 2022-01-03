@@ -7,16 +7,16 @@ interface TransactionProviderProps {
 type Transaction = {
   id: string;
   title: string;
-  amount: number;
+  price: number;
   date: string;
   category: string;
   type: string;
 };
 
 type Status = {
-  income: number;
-  outcome: number;
-  balance: number;
+  incomeFormatted: string;
+  outcomeFormatted: string;
+  balanceFormatted: string;
 };
 
 interface TransactionContextData {
@@ -75,18 +75,33 @@ export function TransactionProvider({
     let income = 0;
     transaction.map((transaction) => {
       if (transaction.type === 'outcome') {
-        outcome += transaction.amount;
+        outcome += transaction.price;
       } else {
-        income += transaction.amount;
+        income += transaction.price;
       }
     });
 
     const balance = income - outcome;
 
+    const incomeFormatted = income.toLocaleString('pt-BR', {
+      style: 'currency',
+      currency: 'BRL',
+    });
+
+    const outcomeFormatted = outcome.toLocaleString('pt-BR', {
+      style: 'currency',
+      currency: 'BRL',
+    });
+
+    const balanceFormatted = balance.toLocaleString('pt-BR', {
+      style: 'currency',
+      currency: 'BRL',
+    });
+
     return {
-      income,
-      outcome,
-      balance,
+      incomeFormatted,
+      outcomeFormatted,
+      balanceFormatted,
     };
   };
 
