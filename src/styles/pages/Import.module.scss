@@ -25,6 +25,9 @@
 }
 
 @media screen and (max-width: 1080px) {
+  .import {
+    margin-top: 20px;
+  }
   .container {
     height: auto;
     background: var(--background);

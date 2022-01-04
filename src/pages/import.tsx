@@ -41,10 +41,10 @@ const Import: NextPage = () => {
           <h1>Cadastrar</h1>
           <Form />
         </div>
-        <div className={styles.wrapperHeaderBottom}>
-          <HeaderBottom route={route} />
-        </div>
       </main>
+      <div className={styles.wrapperHeaderBottom}>
+        <HeaderBottom route={route} />
+      </div>
     </div>
   );
 };
