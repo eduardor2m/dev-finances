@@ -43,7 +43,7 @@ const Import: NextPage = () => {
             <HeaderSmallMobile />
           </div>
           <div className={styles.import}>
-            <h1>Cadastrar</h1>
+            <h1>Cadastro</h1>
             <Form />
           </div>
         </main>
