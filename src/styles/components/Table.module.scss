@@ -67,6 +67,14 @@
         padding-left: 16px;
       }
 
+      .wrapperCategoryAndDate {
+        width: 15%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
       .tableCategory {
         width: 15%;
         height: 100%;
