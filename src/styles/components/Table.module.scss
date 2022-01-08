@@ -89,3 +89,79 @@
     }
   }
 }
+
+@media screen and (max-width: 1100px) {
+  .table {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 20px;
+
+    .tableHeader {
+      display: none;
+    }
+
+    .tableBody {
+      .tableRow {
+        width: 100%;
+        background-color: var(--shape);
+        height: 128px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        padding: 16px;
+
+        .tableTitle {
+          width: 100%;
+          height: auto;
+          color: var(--title);
+          font-size: 14px;
+          display: flex;
+          align-items: center;
+          padding-left: 0px;
+        }
+
+        .tablePrice {
+          width: 100%;
+          height: auto;
+          font-size: 20px;
+          display: flex;
+          align-items: center;
+          padding-left: 0px;
+          margin-top: -10px;
+        }
+
+        .wrapperCategoryAndDate {
+          width: 100%;
+          height: auto;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        .tableCategory {
+          width: 25%;
+          height: auto;
+          display: flex;
+          align-items: center;
+          font-size: 14px;
+          padding-left: 0px;
+
+          .textCategory {
+            margin-left: 10px;
+          }
+        }
+
+        .tableDate {
+          width: 25%;
+          height: auto;
+          font-size: 14px;
+          display: flex;
+          align-items: center;
+          padding-left: 5px;
+        }
+      }
+    }
+  }
+}

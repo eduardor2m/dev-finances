@@ -6,6 +6,8 @@ import { useRouter } from 'next/router';
 
 import { Card } from '../components/card';
 import { Header } from '../components/header';
+import { HeaderBottom } from '../components/headerBottom';
+import { HeaderMobile } from '../components/headerMobile';
 import { Table } from '../components/table';
 import { useTransaction } from '../hooks/useTransaction';
 import styles from '../styles/pages/Home.module.scss';
@@ -19,7 +21,7 @@ const Home: NextPage = () => {
   useEffect(() => {
     if (router.asPath === '/') {
       setRoute(true);
-    } else if (router.asPath === '/list') {
+    } else if (router.asPath === '/import') {
       setRoute(false);
     }
   }, [router]);
@@ -33,9 +35,18 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <Header route={route} />
+        <div className={styles.wrapperHeader}>
+          <Header route={route} />
+        </div>
+        <div className={styles.headerMobile}>
+          <HeaderMobile />
+        </div>
         <Card />
+        <h1 className={styles.titleTable}>Listagem</h1>
         <Table data={transaction} />
+        <div className={styles.wrapperHeaderBottom}>
+          <HeaderBottom route={route} />
+        </div>
       </main>
     </div>
   );
