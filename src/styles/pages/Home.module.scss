@@ -9,13 +9,32 @@
   margin: 0 auto;
 }
 
+.titleTable {
+  display: none;
+}
+
+.headerMobile {
+  display: none;
+}
+
 @media screen and (max-width: 1080px) {
+  .titleTable {
+    display: inline-block;
+    margin-left: 5%;
+    margin-top: 20px;
+    color: var(--title);
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
   .container {
     height: auto;
     background: var(--background);
   }
   .wrapperHeader {
     display: none;
+  }
+  .headerMobile {
+    display: block;
   }
 }
 

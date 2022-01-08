@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 import { Form } from '../components/form';
 import { HeaderBottom } from '../components/headerBottom';
 import { HeaderSmall } from '../components/headerSmall';
+import { HeaderSmallMobile } from '../components/headerSmallMobile';
 import styles from '../styles/pages/Import.module.scss';
 
 const Import: NextPage = () => {
@@ -37,6 +38,9 @@ const Import: NextPage = () => {
         <main className={styles.main}>
           <div className={styles.wrapperHeader}>
             <HeaderSmall route={route} />
+          </div>
+          <div className={styles.headerMobile}>
+            <HeaderSmallMobile />
           </div>
           <div className={styles.import}>
             <h1>Cadastrar</h1>

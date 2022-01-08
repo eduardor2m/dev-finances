@@ -23,6 +23,9 @@
     margin-bottom: 3rem;
   }
 }
+.headerMobile {
+  display: none;
+}
 
 @media screen and (max-width: 1080px) {
   .main {
@@ -37,6 +40,9 @@
   }
   .wrapperHeader {
     display: none;
+  }
+  .headerMobile {
+    display: block;
   }
 }
 

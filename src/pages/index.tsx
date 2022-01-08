@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 import { Card } from '../components/card';
 import { Header } from '../components/header';
 import { HeaderBottom } from '../components/headerBottom';
+import { HeaderMobile } from '../components/headerMobile';
 import { Table } from '../components/table';
 import { useTransaction } from '../hooks/useTransaction';
 import styles from '../styles/pages/Home.module.scss';
@@ -37,7 +38,11 @@ const Home: NextPage = () => {
         <div className={styles.wrapperHeader}>
           <Header route={route} />
         </div>
+        <div className={styles.headerMobile}>
+          <HeaderMobile />
+        </div>
         <Card />
+        <h1 className={styles.titleTable}>Listagem</h1>
         <Table data={transaction} />
         <div className={styles.wrapperHeaderBottom}>
           <HeaderBottom route={route} />

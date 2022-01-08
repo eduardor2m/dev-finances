@@ -55,21 +55,23 @@ export const Table: FC<PropsTransaction> = ({ data }) => {
                 currency: 'BRL',
               })}
             </div>
-            <div className={styles.tableCategory}>
-              {transaction.category === 'Alimentação' ? (
-                <MdFastfood size={20} color="#969cb3" />
-              ) : transaction.category === 'Casa' ? (
-                <BiHomeAlt size={20} color="#969cb3" />
-              ) : transaction.category === 'Venda' ? (
-                <MdAttachMoney size={20} color="#969cb3" />
-              ) : (
-                <MdAttachMoney size={20} color="#969cb3" />
-              )}
-              <span className={styles.textCategory}>
-                {transaction.category}
-              </span>
+            <div className={styles.wrapperCategoryAndDate}>
+              <div className={styles.tableCategory}>
+                {transaction.category === 'Alimentação' ? (
+                  <MdFastfood size={20} color="#969cb3" />
+                ) : transaction.category === 'Casa' ? (
+                  <BiHomeAlt size={20} color="#969cb3" />
+                ) : transaction.category === 'Venda' ? (
+                  <MdAttachMoney size={20} color="#969cb3" />
+                ) : (
+                  <MdAttachMoney size={20} color="#969cb3" />
+                )}
+                <span className={styles.textCategory}>
+                  {transaction.category}
+                </span>
+              </div>
+              <div className={styles.tableDate}>{transaction.date}</div>
             </div>
-            <div className={styles.tableDate}>{transaction.date}</div>
           </div>
         ))}
       </div>

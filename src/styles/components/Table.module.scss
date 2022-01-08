@@ -97,86 +97,98 @@
     margin-top: 20px;
 
     .tableHeader {
-      width: 100%;
-      height: 56px;
-      margin-bottom: 32px;
-      display: flex;
+      display: none;
+      // width: 100%;
+      // height: 56px;
+      // margin-bottom: 32px;
+      // display: flex;
 
-      .tableHeaderTitle {
-        width: 25%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-      }
+      // .tableHeaderTitle {
+      //   width: 25%;
+      //   height: 100%;
+      //   display: flex;
+      //   align-items: center;
+      // }
 
-      .tableHeaderPrice {
-        width: 25%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-      }
+      // .tableHeaderPrice {
+      //   width: 25%;
+      //   height: 100%;
+      //   display: flex;
+      //   align-items: center;
+      // }
 
-      .tableHeaderCategory {
-        width: 25%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-      }
+      // .tableHeaderCategory {
+      //   width: 25%;
+      //   height: 100%;
+      //   display: flex;
+      //   align-items: center;
+      // }
 
-      .tableHeaderDate {
-        width: 25%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-      }
+      // .tableHeaderDate {
+      //   width: 25%;
+      //   height: 100%;
+      //   display: flex;
+      //   align-items: center;
+      // }
     }
 
     .tableBody {
       .tableRow {
         width: 100%;
         background-color: var(--shape);
-        height: 64px;
+        height: 128px;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        justify-content: space-between;
         border-radius: 5px;
         margin-bottom: 10px;
+        padding: 16px;
 
         .tableTitle {
-          width: 25%;
-          height: 100%;
+          width: 100%;
+          height: auto;
           color: var(--title);
-          font-size: 12px;
-          display: flex;
-          align-items: center;
-          padding-left: 5px;
-        }
-
-        .tablePrice {
-          width: 25%;
-          height: 100%;
-          font-size: 12px;
+          font-size: 14px;
           display: flex;
           align-items: center;
           padding-left: 0px;
         }
 
-        .tableCategory {
-          width: 25%;
-          height: 100%;
+        .tablePrice {
+          width: 100%;
+          height: auto;
+          font-size: 20px;
           display: flex;
           align-items: center;
-          font-size: 12px;
-          padding-left: 5px;
+          padding-left: 0px;
+          margin-top: -10px;
+        }
+
+        .wrapperCategoryAndDate {
+          width: 100%;
+          height: auto;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        .tableCategory {
+          width: 25%;
+          height: auto;
+          display: flex;
+          align-items: center;
+          font-size: 14px;
+          padding-left: 0px;
 
           .textCategory {
-            margin-left: 5px;
+            margin-left: 10px;
           }
         }
 
         .tableDate {
           width: 25%;
-          height: 100%;
-          font-size: 12px;
+          height: auto;
+          font-size: 14px;
           display: flex;
           align-items: center;
           padding-left: 5px;
