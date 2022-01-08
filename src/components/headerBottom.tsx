@@ -24,12 +24,12 @@ export const HeaderBottom: FC<Props> = ({ route }) => {
             >
               <AiOutlineUnorderedList
                 size={20}
-                color={route ? 'var(--green)' : 'none'}
+                color={route ? 'var(--green)' : 'var(--text)'}
               />
               <span
                 className={styles.headerLinkText}
                 style={{
-                  color: route ? 'var(--title)' : 'none',
+                  color: route ? 'var(--title)' : 'var(--text)',
                 }}
               >
                 Listagem
@@ -48,12 +48,12 @@ export const HeaderBottom: FC<Props> = ({ route }) => {
             >
               <MdAttachMoney
                 size={20}
-                color={route ? 'none' : 'var(--green)'}
+                color={route ? 'var(--text)' : 'var(--green)'}
               />
               <span
                 className={styles.headerLinkText}
                 style={{
-                  color: route ? 'none' : 'var(--title)',
+                  color: route ? 'var(--text)' : 'var(--title)',
                 }}
               >
                 Cadastrar
