@@ -25,6 +25,9 @@
 }
 
 @media screen and (max-width: 1080px) {
+  .main {
+    height: 100vh;
+  }
   .import {
     margin-top: 20px;
   }

@@ -23,29 +23,31 @@ const Import: NextPage = () => {
   }, [router]);
 
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Import</title>
-        <meta
-          name="description"
-          content="Adicione sua transação financeira e gerencie os seus gastos e ganhos"
-        />
-        <link rel="icon" href="/assets/logo.png" />
-      </Head>
+    <>
+      <div className={styles.container}>
+        <Head>
+          <title>Import</title>
+          <meta
+            name="description"
+            content="Adicione sua transação financeira e gerencie os seus gastos e ganhos"
+          />
+          <link rel="icon" href="/assets/logo.png" />
+        </Head>
 
-      <main className={styles.main}>
-        <div className={styles.wrapperHeader}>
-          <HeaderSmall route={route} />
-        </div>
-        <div className={styles.import}>
-          <h1>Cadastrar</h1>
-          <Form />
-        </div>
-      </main>
+        <main className={styles.main}>
+          <div className={styles.wrapperHeader}>
+            <HeaderSmall route={route} />
+          </div>
+          <div className={styles.import}>
+            <h1>Cadastrar</h1>
+            <Form />
+          </div>
+        </main>
+      </div>
       <div className={styles.wrapperHeaderBottom}>
         <HeaderBottom route={route} />
       </div>
-    </div>
+    </>
   );
 };
 

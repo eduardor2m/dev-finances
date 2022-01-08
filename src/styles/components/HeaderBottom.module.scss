@@ -1,5 +1,5 @@
 .header {
-  position: absolute;
+  position: fixed;
   width: 100%;
   bottom: 0;
   .headerLinks {
@@ -10,7 +10,7 @@
     height: 56px;
     justify-content: space-between;
     align-items: center;
-    background-color: #fff;
+    background-color: var(--shape);
     border-bottom: 1px solid #e5e5e5;
     a {
       display: flex;
@@ -20,7 +20,7 @@
       height: 100%;
       color: var(--text);
       font-size: 1.2rem;
-      background-color: #fff;
+      background-color: var(--shape);
       font-weight: 600;
       text-decoration: none;
       transition: all 0.2s ease-in-out;

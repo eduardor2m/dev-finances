@@ -22,7 +22,7 @@ export const HeaderSmall: FC<Props> = ({ route }) => {
             <button
               className={styles.headerLink}
               style={{
-                borderBottom: route ? 'none' : ' 1px solid var(--green)',
+                borderBottom: route ? ' 1px solid var(--green)' : 'none',
               }}
             >
               <span className={styles.headerLinkText}>Listagem</span>
@@ -35,7 +35,7 @@ export const HeaderSmall: FC<Props> = ({ route }) => {
             <button
               className={styles.headerLink}
               style={{
-                borderBottom: route ? ' 1px solid var(--green)' : 'none',
+                borderBottom: route ? 'none' : ' 1px solid var(--green)',
               }}
             >
               <span className={styles.headerLinkText}>Importar</span>
